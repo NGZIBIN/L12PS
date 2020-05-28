@@ -32,11 +32,13 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
         Intent i = new Intent(context, MainActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(context, reqCode, i, PendingIntent.FLAG_CANCEL_CURRENT);
 
+//        Bitmap picture = BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher_background)
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "default");
         builder.setContentTitle("Task Manager Reminder");
         builder.setContentText(taskName);
         builder.setSmallIcon(android.R.drawable.ic_dialog_info);
+//        builder.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(picture).bigLargeIcon(null))
         builder.setContentIntent(pIntent);
         builder.setAutoCancel(true);
 

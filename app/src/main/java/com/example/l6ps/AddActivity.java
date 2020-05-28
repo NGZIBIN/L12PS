@@ -16,7 +16,7 @@ import java.util.Calendar;
 
 public class AddActivity extends AppCompatActivity {
 Button btnAdd, btnCancel;
-EditText etName, etDesc;
+EditText etName, etDesc, etTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,18 +26,21 @@ EditText etName, etDesc;
         btnCancel = findViewById(R.id.btnCancel);
         etName = findViewById(R.id.etName);
         etDesc = findViewById(R.id.etDesc);
+        etTime = findViewById(R.id.etTime);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String taskName = etName.getText().toString().trim();
                 String desc = etDesc.getText().toString().trim();
+                String time = etTime.getText().toString();
+                int timeInt = Integer.parseInt(time);
                 DBHelper dbh = new DBHelper(AddActivity.this);
                 long insert = dbh.insertTask(taskName, desc);
                 if(insert != -1){
                     Toast.makeText(AddActivity.this, "Inserted", Toast.LENGTH_LONG).show();
                     Calendar cal = Calendar.getInstance();
-                    cal.add(Calendar.SECOND, 5);
+                    cal.add(Calendar.SECOND, timeInt);
 
                     Intent i = new Intent(AddActivity.this, ScheduledNotificationReceiver.class);
                     int reqCode = 12345;

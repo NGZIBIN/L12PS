@@ -25,7 +25,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Description" />
 
     <EditText
         android:id="@+id/etDesc"
@@ -34,6 +34,20 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remind in seconds" />
+
+    <EditText
+        android:id="@+id/etTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="5" />
 
     <LinearLayout
         android:layout_width="wrap_content"
