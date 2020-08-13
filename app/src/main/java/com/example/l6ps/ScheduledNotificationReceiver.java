@@ -34,10 +34,9 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
 
 
         NotificationCompat.BigPictureStyle picStyle = new NotificationCompat.BigPictureStyle();
-        picStyle.bigPicture(BitmapFactory.decodeResource(context.getResources(),R.drawable.banner)).build();
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "default");
-        builder.setContentTitle("Task Manager Reminder");
+        builder.setContentTitle("Task");
         builder.setContentText(taskName);
         builder.setSmallIcon(android.R.drawable.ic_dialog_info);
         builder.setStyle(picStyle);

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class AddActivity extends AppCompatActivity {
+    int notificationId = 001;
 Button btnAdd, btnCancel;
 EditText etName, etDesc, etTime;
     @Override
